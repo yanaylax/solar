@@ -7,18 +7,15 @@ import NavBar from "./NavBar";
 import Footer from "./Footer";
 import "../App.css";
 
- 
-
-import { SwitchTransition, CSSTransition } from "react-transition-group";
 import CrossfadeImage from "./CrossfadeImage";
 
 const Template = styled.div`
   font-size: 19px;
-  font-family: 'Alef', sans-serif;
+  font-family: "Alef", sans-serif;
   max-width: 1300px;
   margin: auto;
-  background-color:#B6CF6A;
-  color:#637C16;
+  background-color: #b6cf6a;
+  color: #637c16;
 
   @media only screen and (max-width: 1300px) {
     font-size: 15px;
@@ -38,10 +35,10 @@ const Template = styled.div`
     margin: 0;
   }
   h1 {
-    color: #8CA73A;
+    color: #8ca73a;
     margin: 0;
     padding: 1em;
-    background-color: #DFF3A3;
+    background-color: #dff3a3;
     font-size: 1.8em;
     font-weight: normal;
     display: flex;
@@ -51,9 +48,6 @@ const Template = styled.div`
     display: flex;
     flex-direction: column;
   }
-
-
-  
 `;
 
 export default function AppTemplate({ children }) {
@@ -76,24 +70,10 @@ export default function AppTemplate({ children }) {
     <div>
       <NavBar />
       <Template>
-          <div className="main">
-            <SwitchTransition mode={mode}>
-              <CSSTransition
-                key={state}
-                addEndListener={(node, done) => {
-                  node.addEventListener("transitionend", done, false);
-                }}
-                classNames="fade"
-              >
-                <div className="button-container">
-                  {/* <img src={image} alt="solar pictures" /> */}
-                  <CrossfadeImage src={image}/>
-                  <h1>המקום מספר אחת לתחום הסולרי</h1>
-                </div>
-              </CSSTransition>
-            </SwitchTransition>
-          </div>
-      
+        <div>
+          <CrossfadeImage src={image} />
+          <h1>המקום מספר אחת לתחום הסולרי</h1>
+        </div>
 
         {children}
         <Footer />
