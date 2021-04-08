@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import useStyles from "../styles/useStyles";
-import solar from "../images/Solar-panel-array-rooftop.jpg";
+import solar from "../images/solar_array2.jpg";
 import eran from "../images/eran.jpg";
 import solaredge from "../images/SolarEdge_logo.svg";
 import sunpower from "../images/Sunpower_logo.svg";

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import solar from "../images/Solar-panel-array-rooftop.jpg";
+import solar from "../images/solar_array2.jpg";
 import eran from "../images/eran.jpg";
 
 const HomeStyles = styled.div`
@@ -17,12 +17,15 @@ const HomeStyles = styled.div`
       font-size: 1.5em;
     }
   }
+
   .img {
     border-radius: 50%;
-    width: 150px;
-    height: 150px;
+    width: 11em;
+    height: 11em;
+    margin-right: 1em;
+
     margin-left: 2em;
-    border: 4px solid #637C16;
+    border: 0.3em solid #637c16;
   }
   .img_container {
     display: flex;
@@ -35,11 +38,11 @@ const HomeStyles = styled.div`
     border-radius: 3px;
     h3 {
       font-size: 1.3em;
-      margin-bottom:0;
+      margin-bottom: 0;
     }
     p {
       font-size: 1.2em;
-      margin-right:0.5em;
+      margin-right: 0.5em;
     }
     &:hover {
       background-color: #edf8c9;
@@ -52,25 +55,26 @@ const HomeStyles = styled.div`
     flex-direction: row;
     width: 100%;
     margin-top: 4em;
-    align-items:center;
+    align-items: center;
     img {
-      width: 180px;
-      height: 180px;
+      width: 9em;
+      height: 9em;
       border-radius: 50%;
-      border: 4px solid #637C16;
+      margin-right: 4em;
+      border: 0.3em solid #637c16;
 
-    margin-left: 1.3em;
-
+      margin-left: 1.3em;
     }
-    p{
-      padding:1em;
-      direction:rtl;
+    p {
+      padding: 1em;
+      direction: rtl;
+      margin-bottom: -1em;
     }
-    
   }
-  .sensei{
-    direction:rtl;
-    margin-top:4em;
+  .sensei {
+    direction: rtl;
+    margin-top: 4em;
+    padding:1em;
   }
 `;
 
@@ -122,7 +126,7 @@ export default function HomePage() {
   ]);
 
   return (
-    <div style={{ maxWidth: "1200px", margin: "auto" }}>
+    <div>
       <HomeStyles>
         <div className="title">
           <h2>חברת סולאר סנסאי הנה ספקית מובילה של ציוד למערכות סולאריות</h2>
@@ -145,7 +149,6 @@ export default function HomePage() {
             </p>
           </div>
           <img src={eran} />
-
         </div>
         <div className="sensei">
           <p>

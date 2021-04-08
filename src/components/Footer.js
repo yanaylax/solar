@@ -31,10 +31,10 @@ const FooterStyled = styled.div`
       transition: 0.1s ease-in-out;
       color:#8a7db1;
       &:hover {
-        outline: 3px solid #b8b0d3;
+        outline: 2px solid #b8b0d3;
       }
       &:focus {
-        outline: 3px solid #b8b0d3;
+        outline: 2px solid #b8b0d3;
       }
     }
   }
@@ -57,10 +57,10 @@ const FooterStyled = styled.div`
 
 
     &:hover {
-      outline: 3px solid #b8b0d3;
+      outline: 2px solid #b8b0d3;
     }
     &:focus {
-      outline: 3px solid #b8b0d3;
+      outline: 2px solid #b8b0d3;
     }
   }
 `;
