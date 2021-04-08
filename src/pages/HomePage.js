@@ -1,189 +1,158 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import solar from "../Solar-panel-array-rooftop.jpg";
-import eran from "../eran.jpeg";
+import solar from "../images/Solar-panel-array-rooftop.jpg";
+import eran from "../images/eran.jpg";
 
 const HomeStyles = styled.div`
-  direction: rtl;
-  display: flex;
-  justify-content: center;
-
-  h2 {
+  .title {
     text-align: center;
-    color: #404040;
-    font-size: 36px;
-    font-weight: 300;
-    line-height: 1.1;
+    padding: 5em;
+    direction: rtl;
+    h2 {
+      font-size: 2em;
+      margin-top: 1em;
+    }
+    p {
+      font-size: 1.5em;
+    }
   }
-  p {
-    font-size: 20px;
-    font-weight: 300;
-    margin: 0;
-    padding: 2px 0 12px;
-    text-align: center;
-    display: block;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-    color: #404040;
+  .img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    margin-left: 2em;
+    border: 4px solid #637C16;
   }
-  .who_are_we {
-    padding: 1em;
+  .img_container {
     display: flex;
-    justify-content: space-around;
+    direction: rtl;
     flex-direction: row;
-    margin: 1em;
-    color: #404040;
-    @media (max-width: 768px) {
-      flex-direction: column;
+    align-items: center;
+    margin-bottom: 1em;
+    transition: 0.3s ease-in-out;
+    padding: 1em;
+    border-radius: 3px;
+    h3 {
+      font-size: 1.3em;
+      margin-bottom:0;
     }
-    img {
-      width: 200px;
-      height: 200px;
-      margin: 1em;
-      border-radius: 50%;
-      border: 3px solid #ef8b22;
-      /* transition: all 0.5s ease-in-out;
-      &:hover {
-        transform: scale(1.2);
-        opacity:0.5;
-      } */
+    p {
+      font-size: 1.2em;
+      margin-right:0.5em;
     }
-    div {
-      max-width: 300px;
-      text-align: center;
-      h2 {
-        font-size: 22px;
-        font-weight: 400;
-        margin-top: 0;
-        margin-bottom: 10px;
-      }
-      p {
-        font-size: 16px;
-        font-weight: 300;
-      }
+    &:hover {
+      background-color: #edf8c9;
+      cursor: pointer;
     }
   }
   .eran_kopel {
     display: flex;
+    justify-content: flex-end;
     flex-direction: row;
-    justify-content: space-between;
-    margin: 1em;
-    h2 {
-      margin: 0;
-      color: #231f20;
-      font-size: 32px;
-      font-weight: 600;
-      line-height: 1.2;
-      padding-bottom: 20px;
-    }
+    width: 100%;
+    margin-top: 4em;
+    align-items:center;
     img {
-      max-width: 350px;
-      max-height: 350px;
-    }
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      border: 4px solid #637C16;
 
-    h3 {
-      color: #231f20;
-      font-size: 20px;
-      padding: 2px 0 12px;
-      line-height: 1.4em;
-      padding-bottom: 10px;
-      padding-top: 45px;
+    margin-left: 1.3em;
+
     }
+    p{
+      padding:1em;
+      direction:rtl;
+    }
+    
   }
-  .eran_kopel2 {
-    display: flex;
-    flex-direction: row;
-    margin: 1em;
-    h2 {
-      margin: 0;
-      color: #231f20;
-      font-size: 32px;
-      font-weight: 600;
-      line-height: 1.2;
-      padding-bottom: 20px;
-    }
-    img {
-      max-width: 350px;
-      max-height: 350px;
-
-      margin-left: 5em;
-    }
-
-    h3 {
-      color: #231f20;
-      font-size: 20px;
-      padding: 2px 0 12px;
-
-      line-height: 1.4em;
-      padding-bottom: 10px;
-      padding-top: 45px;
-    }
+  .sensei{
+    direction:rtl;
+    margin-top:4em;
   }
 `;
 
+const Img = ({ src, name, content }) => {
+  return (
+    <div className="img_container">
+      <img className="img" src={src} />
+      <div>
+        <h3>{name}</h3>
+        <p>{content}</p>
+      </div>
+    </div>
+  );
+};
+
 export default function HomePage() {
+  const [imgs, setImgs] = useState([
+    {
+      src: solar,
+      name: "פאנלים",
+      content:
+        "מפיץ רשמי של חברת SunPower – יצרן הפאנלים הפוטו-וולטאים הוותיק ואיכותי בעולם",
+    },
+    {
+      src: solar,
+      name: "ממירים",
+      content: "מוכר מורשה של של ממירים ואופטימייזרים של חברת סולאראדג'",
+    },
+    {
+      src: solar,
+      name: "מערכות עגינה (קונסטרוקציה)",
+      content: "יצרן של מערכות עגינה מאלומיניום בשיתוף פעולה עם חברת ניב רז",
+    },
+    {
+      src: solar,
+      name: "מערכות שטיפה",
+      content: "מפיץ מורשה של מערכות שטיפה אוטומטיות של חברת RST",
+    },
+    {
+      src: solar,
+      name: "לוחות",
+      content: "מפיץ של רכיבי חשמל לבן הנדרשים למערכות סולאריות",
+    },
+    {
+      src: solar,
+      name: "אגירה",
+      content: "מפיץ של מערכת אגירה המשולבת בצד ה DC במערכות מסחריות",
+    },
+  ]);
+
   return (
     <div style={{ maxWidth: "1200px", margin: "auto" }}>
       <HomeStyles>
-        <h2>באתר שלנו תוכלו למצוא...</h2>
-        <p>
-          SunPower makes going solar safe and simple from the comfort of your
-          home.
-        </p>
-        <div className="who_are_we">
-          <div>
-            <Link>
-              <img src={solar} alt="" />
-            </Link>
-            <h2>פאנלים</h2>
-            <p>
-              הפאנלים של חברת Sunpower, הפאנלים הטובים בעולם, בבלעדיות רק בסולאר
-              סנסיי
-            </p>
-          </div>
-          <div>
-            <Link>
-              <img src={solar} alt="" />
-            </Link>
-            <h2>קונסטרוקציה</h2>
-
-            <p>
-              הפאנלים של חברת Sunpower, הפאנלים הטובים בעולם, בבלעדיות רק בסולאר
-              סנסיי
-            </p>
-          </div>
-          <div>
-            <Link>
-              <img src={solar} alt="" />
-            </Link>
-            <h2>ממירים</h2>
-
-            <p>
-              הפאנלים של חברת Sunpower, הפאנלים הטובים בעולם, בבלעדיות רק בסולאר
-              סנסיי
-            </p>
-          </div>
+        <div className="title">
+          <h2>חברת סולאר סנסאי הנה ספקית מובילה של ציוד למערכות סולאריות</h2>
+          <p>
+            הערך המרכזי שלנו הוא שירות ללא פשרות. אנו מלווים באהבה את מאות
+            לקוחותינו: חברות יזמיות, מתקינים (EPC) וקבלני ביצוע משלב האפיון, דרך
+            אספקת הציוד ובשירות שלאחר מכן.
+          </p>
+        </div>
+        <div className="about">
+          {imgs.map((img) => {
+            return <Img src={img.src} name={img.name} content={img.content} />;
+          })}
         </div>
         <div className="eran_kopel">
           <div>
-            <h3>ערן קופל</h3>
-            <h2>האדם מאחורי סולר סנסיי </h2>
+            <p>
+              סולאר סנסאי (*) מנוהלת על ידי ערן קופל, מהנדס תעשיה, בעל ניסיון של
+              12 שנים בתחום הסולארי
+            </p>
           </div>
-          <div>
-            <img src={eran} />
-          </div>
+          <img src={eran} />
+
         </div>
-        <div className="eran_kopel2">
-          <div>
-            <img src={eran} />
-          </div>
-          <div>
-            <h3>ערן קופל</h3>
-            <h2>האדם מאחורי סולר סנסיי </h2>
-          </div>
+        <div className="sensei">
+          <p>
+            (*) סנסאי משמעו מורה, מדריך ביפנית. סן (sen 先) = לפני, הקודם, בראש.
+            סאי (sei 生) = לידה, חיים, מקור. סנסאי הוא "זה שנולד קודם" כאשר
+            המילה "נולד" אינה מתייחסת לגיל כרונולוגי אלא לוותק
+          </p>
         </div>
       </HomeStyles>
     </div>

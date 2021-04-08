@@ -1,16 +1,28 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import sunpower from "../sunpower.png";
-import solaredge from "../solaredge.png";
+import sunpower from "../images/Sunpower_logo.svg";
+import solaredge from "../images/SolarEdge_logo.svg";
 
 const Nav = styled.div`
   direction: rtl;
   font-family: Arial, Helvetica, sans-serif;
   max-width: 1300px;
-
   margin: auto;
+  background-color: #dff3a3;
+  font-size:20px;
+
+  @media only screen and (max-width: 1300px) {
+    font-size: 15px;
+  }
+
+  @media only screen and (max-width: 1000px) {
+    font-size: 10px;
+  }
+
   .title {
+    padding: 1em;
+    padding-bottom: 0;
   }
   h1 {
     margin-bottom: 0;
@@ -18,12 +30,16 @@ const Nav = styled.div`
   }
   a {
     text-decoration: none;
-    color: #404040;
-    font-size: 18px;
-    margin-left: 15px;
+    color: #637c16;
+
+    margin-left: 1em;
     font-weight: 300;
+    img{
+      height:3em;
+      width:8em;
+    }
     &:hover {
-      color: #f7921e;
+      color: #b6cf6a;
     }
   }
 `;
@@ -31,7 +47,7 @@ const Nav = styled.div`
 const Links = styled.div`
   display: flex;
   align-items: center;
-  border-bottom: solid 1px #e6e6e6;
+  padding: 1em;
   padding-bottom: 0;
 `;
 
@@ -47,9 +63,8 @@ export default function NavBar() {
       <Links>
         <Link to="/construction">קונסטרוקציה</Link>
         <Link to="/about">אודות</Link>
-        <Link to="/contact">צור קשר</Link>
         <Link to="/sunpower">
-          <img width="150px" height="90px" src={sunpower} alt="sunpower logo" />
+          <img  src={sunpower} alt="sunpower logo" />
         </Link>
         <Link to="/solaredge">
           <img

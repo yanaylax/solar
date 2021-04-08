@@ -3,7 +3,6 @@ import React from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import NavBar from "./components/NavBar";
 import HomePage from "./pages/HomePage";
-import ContactMe from "./pages/ContactMe";
 import AppTemplate from "./components/AppTemplate";
 import About from "./pages/About";
 import Construction from "./pages/Construction";
@@ -15,9 +14,7 @@ function App() {
     <Router>
       <AppTemplate>
         <Switch>
-          <Route path="/contact">
-            <ContactMe />
-          </Route>
+        
           <Route path="/about">
             <About />
           </Route>

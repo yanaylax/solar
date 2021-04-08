@@ -2,10 +2,9 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import useStyles from "../styles/useStyles";
-import solar from "../Solar-panel-array-rooftop.jpg";
-import eran from "../eran.jpeg";
-import solaredge from "../solaredge.png";
-
+import solar from "../images/Solar-panel-array-rooftop.jpg";
+import eran from "../images/eran.jpg";
+import solaredge from "../images/SolarEdge_logo.svg";
 
 const Main = styled.div`
   direction: rtl;
@@ -17,52 +16,45 @@ const Main = styled.div`
   }
 
   h2 {
-    color: #404040;
-    font-size: 36px;
+    font-size: 2em;
     font-weight: 300;
-    line-height: 1.1;
     padding: 1em;
   }
   p {
-    font-size: 20px;
-    font-weight: 300;
-    margin: 0;
-    padding: 2px 0 12px;
-    display: block;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-    color: #404040;
+    font-size: 1em;
+
     padding: 1em;
   }
   .about {
     display: flex;
     flex-direction: row;
-    background-color: #f1f1f1;
+    background-color: #dff3a3;
     img {
-      width: 30%;
+      width: 40%;
+      height: 100%;
     }
   }
   .aboutSolar {
     display: flex;
     flex-direction: row;
     img {
-      width: 30%;
+      width: 40%;
+      height: 100%;
     }
   }
-  .title{
-      display:flex;
-      justify-content:space-between;
-      flex-direction:row;
-      align-items:center;
-      img{
-          width:200px;
-          height:60px;
-      }
+  .title {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    img {
+      width: 10em;
+      height: 4em;
+      margin-left: 1em;
+    }
   }
-  .desc{
-      padding:3em;
+  .desc {
+    padding: 3em;
   }
 `;
 
@@ -77,8 +69,7 @@ export default function SolarEdge() {
           </a>
           <DownloadButton>מסמכים להורדה</DownloadButton>
         </div>
-        <img src={solaredge}/>
-
+        <img src={solaredge} />
       </div>
       <div className="about">
         <h2 className="desc">

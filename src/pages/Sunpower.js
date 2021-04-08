@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import useStyles from "../styles/useStyles";
-import solar from "../Solar-panel-array-rooftop.jpg";
-import eran from "../eran.jpeg";
-import solaredge from "../solaredge.png";
-import sunpower from "../sunpower.png";
+import solar from "../images/Solar-panel-array-rooftop.jpg";
+import eran from "../images/eran.jpg";
+import solaredge from "../images/SolarEdge_logo.svg";
+import sunpower from "../images/Sunpower_logo.svg";
 
 const Main = styled.div`
   direction: rtl;
@@ -62,13 +62,13 @@ const Main = styled.div`
     }
   }
   .more {
-    background-color: #f1f1f1;
-    font-size: 30px;
+    background-color: #dff3a3;
+    font-size: 2em;
     text-align: center;
     padding: 1em;
-    margin-bottom: 0.5em;
+    transition: 0.2s ease-in-out;
     &:hover {
-      background-color: #ececec;
+      background-color: #b6cf6a;
       cursor: pointer;
     }
   }
@@ -76,16 +76,23 @@ const Main = styled.div`
     display: flex;
     flex-direction: row;
     align-items: center;
+    h3 {
+      margin: 0.5em;
+    }
+    img {
+      width: 10em;
+      height: 4em;
+      margin-left: 1em;
+    }
   }
   .more_data {
     padding: 1em;
     transition: 0.5s ease-in-out;
   }
   .data_hidden {
-    visibility:hidden;
-    height:0px;
+    visibility: hidden;
+    height: 0px;
     transition: 0.5s ease-in-out;
-
   }
 `;
 

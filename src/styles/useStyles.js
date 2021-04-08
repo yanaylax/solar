@@ -4,24 +4,27 @@ import { Link } from "react-router-dom";
 
 const DownloadButton = styled.button`
 
-background-color:#0071b9;
-padding: 1em 0.5em;
+background-color:#DFF3A3;
+padding: 1em ;
 margin: 1em;
-color:white;
+color:#637C16;
 width:fit-content;
 font-weight:bold;
 border:none;
 border-radius:4px;
-font-size:15px;
+font-size:1em;
 outline:none;
+transition:0.2s ease-in-out;
+
 
 &:hover{
     cursor: pointer;
-    background-color:#f7921e;
+    background-color:#EDF8C9;
 }
 
 
 `
+
 
 export default function useStyles() {
     return {DownloadButton}
