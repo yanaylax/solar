@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import useStyles from "../styles/useStyles";
 import solar from "../images/solar_array2.jpg";
-import eran from "../images/eran.jpg";
+import solar_array from "../images/solar_array.jpg";
 import solaredge from "../images/SolarEdge_logo.svg";
 
 const Main = styled.div`
@@ -16,7 +16,6 @@ const Main = styled.div`
   }
 
   h2 {
-    font-size: 2em;
     font-weight: 300;
     padding: 1em;
   }
@@ -25,12 +24,13 @@ const Main = styled.div`
 
     padding: 1em;
   }
+
   .about {
     display: flex;
     flex-direction: row;
     background-color: #dff3a3;
     img {
-      width: 40%;
+      width: 50%;
       height: 100%;
     }
   }
@@ -52,10 +52,16 @@ const Main = styled.div`
       height: 4em;
       margin-left: 1em;
     }
+    .button_img{
+      width:6em;
+      height:1.4em;
+      margin-left:auto;
+    }
   }
   .desc {
     padding: 3em;
   }
+  
 `;
 
 export default function SolarEdge() {
@@ -65,7 +71,7 @@ export default function SolarEdge() {
       <div className="title">
         <div className="buttons">
           <a href="https://www.solaredge.co.il/">
-            <DownloadButton>לאתר Solaredge</DownloadButton>
+            <DownloadButton><img className="button_img" src={solaredge}/></DownloadButton>
           </a>
           <DownloadButton>מסמכים להורדה</DownloadButton>
         </div>
@@ -76,7 +82,7 @@ export default function SolarEdge() {
           סולאר סנסאי הנו מוכר מורשה לממירים של חברת Solaredge בשיתוף פעולה עם
           מפיץ מורשה
         </h2>
-        <img src={eran} />
+        <img src={solar_array} />
       </div>
       <div className="aboutSolar">
         <img src={solar} />

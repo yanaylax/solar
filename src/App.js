@@ -3,6 +3,7 @@ import React from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import NavBar from "./components/NavBar";
 import HomePage from "./pages/HomePage";
+import English from "./pages/English";
 import AppTemplate from "./components/AppTemplate";
 import About from "./pages/About";
 import Construction from "./pages/Construction";
@@ -26,6 +27,9 @@ function App() {
           </Route>
           <Route path="/solaredge">
             <SolarEdge />
+          </Route>
+          <Route path="/english">
+            <English/>
           </Route>
           <Route path="/">
             <HomePage />

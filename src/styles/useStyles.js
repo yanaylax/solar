@@ -15,7 +15,8 @@ border-radius:4px;
 font-size:1em;
 outline:none;
 transition:0.2s ease-in-out;
-
+font-family: "Alef", sans-serif;
+display:flex;
 
 &:hover{
     cursor: pointer;

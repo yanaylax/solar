@@ -10,7 +10,7 @@ const HomeStyles = styled.div`
   .title {
     text-align: center;
     padding: 5em;
-    direction: rtl;
+    direction: ltr;
     h2 {
       font-size: 2em;
       margin-top: 1em;
@@ -31,7 +31,7 @@ const HomeStyles = styled.div`
   }
   .img_container {
     display: flex;
-    direction: rtl;
+    direction: ltr;
     flex-direction: row;
     align-items: center;
     transition: 0.3s ease-in-out;
@@ -43,7 +43,7 @@ const HomeStyles = styled.div`
     }
     p {
       font-size: 1.3em;
-      margin-right: 0.5em;
+      margin-left: 0.5em;
     }
     div {
       margin-bottom: 2em;
@@ -64,20 +64,20 @@ const HomeStyles = styled.div`
       width: 11em;
       height: 11em;
       border-radius: 50%;
-      margin-right: 6em;
+      margin-left: 6em;
       border: 0.3em solid #637c16;
 
-      margin-left: 1.3em;
+      margin-right: 1.3em;
     }
     p {
       padding: 1em;
-      font-size:1.2em;
-      direction: rtl;
+      font-size: 1.2em;
+      direction: ltr;
       margin-bottom: -2em;
     }
   }
   .sensei {
-    direction: rtl;
+    direction: ltr;
     margin-top: 4em;
     padding: 1em;
   }
@@ -95,24 +95,24 @@ const Img = ({ src, name, content }) => {
   );
 };
 
-export default function HomePage() {
+export default function English() {
   const [imgs, setImgs] = useState([
     {
       src: solar,
-      name: "פאנלים",
+      name: "Modules",
       content:
-        "מפיץ רשמי של חברת SunPower – יצרן הפאנלים הפוטו-וולטאים הוותיק ואיכותי בעולם",
+        "Official distributor of SunPower PV modules in Israel and Palestine",
     },
     {
       src: solar,
-      name: "ממירים",
-      content: "מוכר מורשה (Reseller) של חברת SolarEdge",
+      name: "Inverters",
+      content: "Official reseller of SolarEdge inverters and optimizers",
     },
     {
       src: solar,
-      name: "מערכות עגינה (קונסטרוקציה)",
+      name: "Mounting systems",
       content:
-        "יצרן של מערכות עגינה למתקנים סולאריים על גגות - בשותפות עם חברת ניב רז",
+        "A producer of Aluminum mounting structures for rooftop PV systems",
     },
     // {
     //   src: solar,
@@ -136,10 +136,14 @@ export default function HomePage() {
       <HomeStyles>
         <div className="title">
           <h2>
-            הערך המרכזי שלנו הוא שירות ללא פשרות. אנו מלווים באהבה את מאות
-            לקוחותינו: חברות יזמיות, מתקינים (EPC) וקבלני ביצוע משלב האפיון, דרך
-            אספקת הציוד ובשירות שלאחר מכן.
+            Solar Sensei is a leading distributor of Solar energy systems in
+            Israel and Palestine
           </h2>
+          <p>
+            Our core value is uncompromised service. We serve hundreds of
+            customers: developers, EPC and installers from early definition of
+            system needs, via supply of goods to post sale service.
+          </p>
         </div>
         <div className="about">
           {imgs.map((img) => {
@@ -147,19 +151,20 @@ export default function HomePage() {
           })}
         </div>
         <div className="eran_kopel">
+          <img src={eran} />
+
           <div>
             <p>
-              סולאר סנסאי (*) מנוהלת על ידי ערן קופל, מהנדס תעשיה, בעל ניסיון של
-              12 שנים בתחום הסולארי
+              Solar Sensei (*) is managed by Eran Kopel, industrial engineer
+              with 12 years of experience in the PV market.
             </p>
           </div>
-          <img src={eran} />
         </div>
         <div className="sensei">
           <p>
-            (*) סנסאי משמעו מורה, מדריך ביפנית. סן (sen 先) = לפני, הקודם, בראש.
-            סאי (sei 生) = לידה, חיים, מקור. סנסאי הוא "זה שנולד קודם" כאשר
-            המילה "נולד" אינה מתייחסת לגיל כרונולוגי אלא לוותק
+            (*) Sensei (先生) is an honorific term shared
+            in Japanese, Korean and Chinese; literally translated as "one who
+            comes before" and means "teacher"
           </p>
         </div>
       </HomeStyles>
