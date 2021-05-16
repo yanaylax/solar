@@ -9,7 +9,7 @@ import solaredge from "../images/SolarEdge_logo.svg";
 const HomeStyles = styled.div`
   .title {
     text-align: center;
-    padding: 5em;
+    padding: 3em;
     direction: rtl;
     h2 {
       font-size: 2em;
@@ -53,34 +53,7 @@ const HomeStyles = styled.div`
       cursor: pointer;
     }
   }
-  .eran_kopel {
-    display: flex;
-    justify-content: flex-end;
-    flex-direction: row;
-    width: 100%;
-    margin-top: 4em;
-    align-items: center;
-    img {
-      width: 11em;
-      height: 11em;
-      border-radius: 50%;
-      margin-right: 6em;
-      border: 0.3em solid #637c16;
-
-      margin-left: 1.3em;
-    }
-    p {
-      padding: 1em;
-      font-size:1.2em;
-      direction: rtl;
-      margin-bottom: -2em;
-    }
-  }
-  .sensei {
-    direction: rtl;
-    margin-top: 4em;
-    padding: 1em;
-  }
+ 
 `;
 
 const Img = ({ src, name, content }) => {
@@ -146,22 +119,8 @@ export default function HomePage() {
             return <Img src={img.src} name={img.name} content={img.content} />;
           })}
         </div>
-        <div className="eran_kopel">
-          <div>
-            <p>
-              סולאר סנסאי (*) מנוהלת על ידי ערן קופל, מהנדס תעשיה, בעל ניסיון של
-              12 שנים בתחום הסולארי
-            </p>
-          </div>
-          <img src={eran} />
-        </div>
-        <div className="sensei">
-          <p>
-            (*) סנסאי משמעו מורה, מדריך ביפנית. סן (sen 先) = לפני, הקודם, בראש.
-            סאי (sei 生) = לידה, חיים, מקור. סנסאי הוא "זה שנולד קודם" כאשר
-            המילה "נולד" אינה מתייחסת לגיל כרונולוגי אלא לוותק
-          </p>
-        </div>
+        
+        
       </HomeStyles>
     </div>
   );

@@ -13,12 +13,28 @@ const Main = styled.div`
   justify-content: center;
 
   .title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
   }
   .pictures {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     img {
       height: 14em;
+    }
+  }
+  .title_text {
+    padding-left: 4em;
+    padding-right: 4em;
+    margin-top: 3em;
+    h2 {
+      font-size: 2em;
+      text-align: center;
+    }
+    p{
+      font-size:1.5em;
+      text-align:center;
     }
   }
 `;
@@ -41,7 +57,27 @@ export default function Construction() {
   return (
     <Main>
       <div>
-        <DownloadButton>מסמכים להורדה</DownloadButton>
+        <div className="title">
+          <DownloadButton>חוברת הוראות למתקין</DownloadButton>
+          <DownloadButton>מפרט לדוגמא</DownloadButton>
+          <DownloadButton>תכנון מפורט לדוגמא</DownloadButton>
+        </div>
+        <div className="title_text">
+          <h2>
+            חברת סולאר סנסאי הנה יצרנית מובילה של מערכות לעיגון פאנלים סולאריים
+            על גבי גגות.
+          </h2>
+          <p>
+            עד כה סיפקנו למעלה מ 200 מגה-וואט של קונסטרוקציה מבוססת פרופילי
+            אלומינים בשיטת ה "חיתוך וניקוב", לגגות איסכורית, בטון ורעפים.
+            <br /> אנו מספקים פתרון מלא כולל כל האביזרים הנדרשים וכולל תכנון
+            מפורט הנחשב לאיכותי בישראל.
+            <br /> אנו מחויבים לאיכות החומרים ומבצעים את העבודה במסירות ובאהבה
+            <br />
+            אנו מעסיקים 17 עובדים, מתוכם 5 מהנדסים, כל זאת כדי לתת מענה מהיר ככל
+            האפשר.
+          </p>
+        </div>
         <div className="title"></div>
         <div className="pictures">
           {photos.map((photo) => {

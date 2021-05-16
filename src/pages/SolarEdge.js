@@ -5,11 +5,15 @@ import useStyles from "../styles/useStyles";
 import solar from "../images/solar_array2.jpg";
 import solar_array from "../images/solar_array.jpg";
 import solaredge from "../images/SolarEdge_logo.svg";
+import warranty from "../pdf/solaredge-warranty-april-2019.pdf"
 
 const Main = styled.div`
   direction: rtl;
   display: flex;
   justify-content: center;
+  a {
+    text-decoration: none;
+  }
   .buttons {
     display: flex;
     flex-direction: row;
@@ -17,12 +21,14 @@ const Main = styled.div`
 
   h2 {
     font-weight: 300;
+    font-size: 1.2em;
     padding: 1em;
+    padding-right: 1.5em;
   }
   p {
     font-size: 1em;
-
     padding: 1em;
+    padding-right: 2em;
   }
 
   .about {
@@ -52,16 +58,15 @@ const Main = styled.div`
       height: 4em;
       margin-left: 1em;
     }
-    .button_img{
-      width:6em;
-      height:1.4em;
-      margin-left:auto;
+    .button_img {
+      width: 6em;
+      height: 1.4em;
+      margin-left: auto;
+      margin-right: 0.3em;
     }
   }
   .desc {
-    padding: 3em;
   }
-  
 `;
 
 export default function SolarEdge() {
@@ -70,10 +75,16 @@ export default function SolarEdge() {
     <Main>
       <div className="title">
         <div className="buttons">
-          <a href="https://www.solaredge.co.il/">
-            <DownloadButton><img className="button_img" src={solaredge}/></DownloadButton>
+          <a href="https://www.solaredge.com/" target="_blank" >
+            <DownloadButton>
+              לאתר
+              <img className="button_img" src={solaredge} />
+            </DownloadButton>
           </a>
-          <DownloadButton>מסמכים להורדה</DownloadButton>
+          <a target="_blank" href={warranty}>
+            {" "}
+            <DownloadButton>כתב אחריות</DownloadButton>
+          </a>
         </div>
         <img src={solaredge} />
       </div>

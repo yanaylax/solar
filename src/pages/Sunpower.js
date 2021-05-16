@@ -59,9 +59,10 @@ const Main = styled.div`
     text-align: center;
     padding: 1em;
     transition: 0.2s ease-in-out;
+
     border-bottom: 0.3em solid #637c16;
     &:hover {
-      background-color: #b6cf6a;
+      background-color: #EDF8C9;
       cursor: pointer;
     }
   }
@@ -86,7 +87,7 @@ const Main = styled.div`
     max-height: 600px;
     display: flex;
     flex-direction: row;
-    transition: max-height 0.5s;
+    transition: max-height 0.5s ;
 
     h2 {
       padding: 1em;
@@ -127,6 +128,9 @@ const Main = styled.div`
       font-size: 1.5em;
     }
   }
+  .button_img{
+    margin-right:0.3em;
+  }
 `;
 
 const Window = ({ name, info, src }) => {
@@ -135,8 +139,7 @@ const Window = ({ name, info, src }) => {
   return (
     <div>
       <div
-        onMouseEnter={() => setShow(true)}
-        onMouseLeave={() => setShow(false)}
+        onClick={() => setShow(!show)}
         className="more"
       >
         {name}
@@ -161,14 +164,14 @@ export default function Sunpower() {
   ]);
   const [more, setMore] = useState([
     {
-      name: "יותר תפוקה",
+      name: "חדשנות טכנולוגית",
       data: "מקדם טמפרטורה נמוך של 0.34%-  מבטיח לך ירידה מתונה בתפוקה בחום",
       src: output,
     },
     {
-      name: "יותר אחריות",
+      name: "יש על מי לסמוך",
       data:
-        "25 שנות אחריות מוצר ו 25 שנות אחריות תפוקה. 98% בשנה הראשונה. ירידה של 0.45% בשנה",
+        "האחריות המקיפה ביותר: 25 שנות אחריות מוצר ו 25 שנות אחריות תפוקה. 98% בשנה הראשונה. ירידה של 0.45% בשנה",
       src: guarantee,
     },
     {
@@ -178,7 +181,7 @@ export default function Sunpower() {
       src: experience,
     },
     {
-      name: "יותר עמידות",
+      name: "יותר אמינות",
       data:
         "חברת SunPower פיתחה טכנולוגיה בסטנדרט של תעשיית החלל לקפסוליזציה מלאה של התאים, כהגנה מפני לחות וקורוזיה וכן לעמידות בפני סדקים וקצרים הנובעים מטלטולים והשפעות אקלים",
       src: resilience,
@@ -190,24 +193,25 @@ export default function Sunpower() {
     <Main>
       <div className="title">
         <div className="buttons">
-          <a href="https://www.sunpower.com/">
+          <a href="https://www.sunpower.com/" target="_blank">
             <DownloadButton>
+              <div>לאתר</div>
               <img className="button_img" src={sunpower} />
             </DownloadButton>
           </a>
-          <a href={files[0]}>
+          <a target="_blank" href={files[0]}>
             {" "}
             <DownloadButton>דף מידע לפאנל 475-490 וואט</DownloadButton>
           </a>
-          <a href={files[1]}>
+          <a target="_blank" href={files[1]}>
             {" "}
             <DownloadButton>דף מידע לפאנל 525-530 וואט</DownloadButton>
           </a>
 
-          <a href={files[2]}>
+          <a target="_blank" href={files[2]}>
             <DownloadButton>כתב אחריות</DownloadButton>
           </a>
-          <a href={files[3]}>
+          <a target="_blank" href={files[3]}>
             <DownloadButton>מצגת טכנולוגית</DownloadButton>
           </a>
         </div>
