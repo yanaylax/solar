@@ -34,7 +34,7 @@ const Main = styled.div`
   .about {
     display: flex;
     flex-direction: row;
-    background-color: #dff3a3;
+    background-color: #bee3f6;
     img {
       width: 50%;
       height: 100%;

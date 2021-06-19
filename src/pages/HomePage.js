@@ -27,7 +27,7 @@ const HomeStyles = styled.div`
     margin-right: 2em;
 
     margin-left: 2em;
-    border: 0.3em solid #637c16;
+    border: 0.3em solid #00558a;
   }
   .img_container {
     display: flex;
@@ -49,11 +49,10 @@ const HomeStyles = styled.div`
       margin-bottom: 2em;
     }
     &:hover {
-      background-color: #edf8c9;
+      background-color: #dbf3ff;
       cursor: pointer;
     }
   }
- 
 `;
 
 const Img = ({ src, name, content }) => {
@@ -116,11 +115,9 @@ export default function HomePage() {
         </div>
         <div className="about">
           {imgs.map((img) => {
-            return <Img src={img.src} name={img.name} content={img.content} />;
+            return <Img key={img.name} src={img.src} name={img.name} content={img.content} />;
           })}
         </div>
-        
-        
       </HomeStyles>
     </div>
   );

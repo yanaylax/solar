@@ -60,9 +60,9 @@ const Main = styled.div`
     padding: 1em;
     transition: 0.2s ease-in-out;
 
-    border-bottom: 0.3em solid #637c16;
+    border-bottom: 0.3em solid #00558a;
     &:hover {
-      background-color: #EDF8C9;
+      background-color: #dbf3ff;
       cursor: pointer;
     }
   }
@@ -83,7 +83,7 @@ const Main = styled.div`
     }
   }
   .more_data {
-    background-color: #dff3a3;
+    background-color: white;
     max-height: 600px;
     display: flex;
     flex-direction: row;

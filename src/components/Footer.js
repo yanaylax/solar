@@ -7,7 +7,7 @@ import eran from "../images/eran.jpg";
 const FooterStyled = styled.div`
   display: flex;
   direction: rtl;
-  background-color: #655596;
+  background-color: white;
   font-family: "Alef", sans-serif;
   padding: 1em;
   font-size: 19px;
@@ -24,7 +24,7 @@ const FooterStyled = styled.div`
   }
 
   h2 {
-    color: #ccc4e8;
+    color: #00558a;
     text-align:center;
     font-size:1.7em;
   }
@@ -36,18 +36,18 @@ const FooterStyled = styled.div`
       font-family: "Alef", sans-serif;
       margin-bottom: 0.5em;
 
-      background-color: #ccc4e8;
+      background-color: #bee3f6;
       font-size: 1.4em;
       border: none;
       outline: none;
       padding: 0.2em 0.5em;
       transition: 0.2s ease-in-out;
-      color: #443379;
+      color: #00558a;
       &:hover {
-        background-color: #8a7db1;
+        background-color: #dbf3ff;
       }
       &:focus {
-        background-color: #8a7db1;
+        background-color: #dbf3ff;
       }
     }
   }
@@ -65,14 +65,14 @@ const FooterStyled = styled.div`
     padding: 0.2em 0.5em;
     height: 10em;
     transition: 0.2s ease-in-out;
-    background-color: #ccc4e8;
-    color: #443379;
+    background-color: #bee3f6;
+    color: #00558a;
     resize: none;
     &:hover {
-      background-color: #8a7db1;
+      background-color: #dbf3ff;
     }
     &:focus {
-      background-color: #8a7db1;
+      background-color: #dbf3ff;
     }
   }
   button {
@@ -83,11 +83,11 @@ const FooterStyled = styled.div`
     outline: none;
     padding: 0.2em 0.5em;
     transition: 0.2s ease-in-out;
-    background-color: #ccc4e8;
-    color: #443379;
+    background-color: #bee3f6;
+    color: #00558a;
 
     &:hover {
-      background-color: #8a7db1;
+      background-color: #dbf3ff;
       cursor: pointer;
     }
   }
@@ -97,7 +97,7 @@ const FooterStyled = styled.div`
     margin-top: 0;
     a {
       text-decoration: none;
-      color: #ccc4e8;
+      color: #00558a;
       margin-left: 0.2em;
     }
     div {
@@ -119,12 +119,12 @@ const FooterStyled = styled.div`
     flex-direction: row;
     padding-top:1em;
     margin-top:1em;
-    border-top:0.3em solid #8a7db1;
-    color: #ccc4e8;
+    border-top:0.3em solid #00558a;
+    color: #00558a;
     img {
       width: 15em;
       height: 15em;
-      border: 0.2em solid #ccc4e8;
+      border: 0.2em solid #00558a;
       border-radius:10px;
     }
     h3{
@@ -197,11 +197,11 @@ export default function Footer() {
             <div className="contact_info">
             <div>
               <a href="mailto:erankopel@gmail.com">erankopel@gmail.com</a>
-              <Email width="1em" height="1em" fill="#ccc4e8" />
+              <Email width="1em" height="1em" fill="#00558a" />
             </div>
             <div>
               <a href="tel:0523367997">052-3367997</a>
-              <Phone width="1em" height="1em" fill="#ccc4e8" />
+              <Phone width="1em" height="1em" fill="#00558a" />
             </div>
           </div>
             <p>

@@ -7,6 +7,7 @@ import NavBar from "./NavBar";
 import Footer from "./Footer";
 import sunpower from "../images/Sunpower_logo.svg";
 import solaredge from "../images/SolarEdge_logo.svg";
+import solarsensei from "../images/logo-inverted1.png";
 
 import "../App.css";
 import { ReactComponent as Menu } from "../images/menu.svg";
@@ -19,8 +20,8 @@ const Template = styled.div`
   font-family: "Alef", sans-serif;
   max-width: 1400px;
   margin: auto;
-  background-color: #b6cf6a;
-  color: #637c16;
+  background-color: white;
+  color: #00558a;
 
   @media only screen and (max-width: 1300px) {
     font-size: 15px;
@@ -40,10 +41,10 @@ const Template = styled.div`
     margin: 0;
   }
   h1 {
-    color: #8ca73a;
+    color: #00558a;
     margin: 0;
     padding: 1em;
-    background-color: #dff3a3;
+    background-color: #FFFFFF;
     font-size: 1.8em;
     font-weight: normal;
     display: flex;
@@ -56,22 +57,22 @@ const Template = styled.div`
 `;
 
 const MobileNav = styled.div`
-  background-color: #dff3a3;
+  background-color: white;
   padding: 1em;
   direction: rtl;
   display: flex;
   justify-content: space-between;
   a {
     text-decoration: none;
-    color: #637c16;
-    font-weight: 300;
+    color: #00558a;
+    font-weight: bold;
     font-size: 1em;
     display: flex;
     img {
-      width: 5em;
+      width: 6em;
     }
     &:hover {
-      color: #b6cf6a;
+      color: #96b9ce;
     }
   }
   .logo {
@@ -84,6 +85,9 @@ const MobileNav = styled.div`
       margin-right: 0.5em;
     }
   }
+  .logo_img {
+    font-size: 2.5em;
+  }
 `;
 
 const MobileNavList = styled.div`
@@ -91,18 +95,19 @@ const MobileNavList = styled.div`
     font-size: 19px;
     display: flex;
     flex-direction: column;
-    background-color: #b6cf6a;
+    background-color: white;
     max-height:500px;
     transition: max-height 0.5s ;
     a {
       display: flex;
       direction: rtl;
       padding: 1em;
+      font-weight: bold;
       text-decoration: none;
-      color: #637c16;
-      border-bottom: 0.1em solid #637c16;
+      color: #00558a;
+      border-bottom: 0.1em solid #96b9ce;
       &:hover {
-        background-color: #dff3a3;
+        background-color: #bee3f6;
       }
     }
     img {
@@ -148,14 +153,15 @@ export default function AppTemplate({ children }) {
           <MobileNav>
             <Menu
               onClick={() => setNavOpen(!navOpen)}
-              fill="#637c16"
+              fill="#00558a"
               width="2.5em"
             />
 
             <div className="logo">
               <Link to="/">
                 <div className="logo">
-                  <h1>Solar Sensei</h1>
+                <img className="logo_img" src={solarsensei}/>
+
                   <div>
                     {" "}
                     <img src={sunpower} alt="sunpower logo" />

@@ -4,10 +4,10 @@ import { Link } from "react-router-dom";
 
 const DownloadButton = styled.button`
 
-background-color:#DFF3A3;
+background-color:#bee3f6;
 padding: 1em ;
 margin: 1em;
-color:#637C16;
+color:#00558a;
 width:fit-content;
 font-weight:bold;
 border:none;
@@ -20,7 +20,7 @@ display:flex;
 
 &:hover{
     cursor: pointer;
-    background-color:#EDF8C9;
+    background-color:#dbf3ff;
 }
 
 

@@ -80,8 +80,8 @@ export default function Construction() {
         </div>
         <div className="title"></div>
         <div className="pictures">
-          {photos.map((photo) => {
-            return <Photo src={photo} />;
+          {photos.map((photo,index) => {
+            return <Photo key={index} src={photo} />;
           })}
         </div>
       </div>

@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import sunpower from "../images/Sunpower_logo.svg";
 import solaredge from "../images/SolarEdge_logo.svg";
+import solarsensei from "../images/logo-inverted1.png";
+
 
 const Nav = styled.div`
   direction: rtl;
@@ -11,7 +13,7 @@ const Nav = styled.div`
   display: flex;
 
   margin: auto;
-  background-color: #dff3a3;
+  background-color: white;
   font-size: 20px;
 
   justify-content: space-between;
@@ -30,17 +32,17 @@ const Nav = styled.div`
   }
   a {
     text-decoration: none;
-    color: #637c16;
+    color: #00558a;
     margin-left: 1em;
-    font-weight: 300;
-    font-size: 1.3em;
+    font-weight: bold;
+    font-size: 1.2em;
     display: flex;
     img {
-      width: 5em;
+      width: 6em;
       
     }
     &:hover {
-      color: #b6cf6a;
+      color: #96b9ce;
     }
   }
   .title {
@@ -50,6 +52,9 @@ const Nav = styled.div`
     img {
       margin-right: 0.4em;
     }
+  }
+  .logo {
+    font-size: 2.5em;
   }
 `;
 
@@ -81,7 +86,7 @@ export default function NavBar() {
       <div className="title">
         <Link to="/">
           <div>
-            <h1>Solar Sensei</h1>
+            <img className="logo" src={solarsensei}/>
             <div>
               {" "}
               <img src={sunpower} alt="sunpower logo" />
