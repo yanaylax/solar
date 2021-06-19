@@ -13,7 +13,7 @@ import "../App.css";
 import { ReactComponent as Menu } from "../images/menu.svg";
 import { Link } from "react-router-dom";
 
-import CrossfadeImage from "./CrossfadeImage";
+import CrossfadeImage from "react-crossfade-image";
 
 const Template = styled.div`
   font-size: 19px;
@@ -173,22 +173,24 @@ export default function AppTemplate({ children }) {
           </MobileNav>
           <MobileNavList>
             <div className={navOpen ? "data_visible" : "data_hidden"}>
-              <Link to="/">דף הבית</Link>
-              <Link to="/sunpower">
+              <Link onClick={()=>setNavOpen(false)} to="/">דף הבית</Link>
+              <Link onClick={()=>setNavOpen(false)} to="/sunpower">
                 <img src={sunpower} alt="sunpower logo" />
               </Link>
-              <Link to="/solaredge">
+              <Link onClick={()=>setNavOpen(false)} to="/solaredge">
                 <img src={solaredge} alt="solaredge logo" />
               </Link>
-              <Link to="/construction">מערכות עגינה (קונסטרוקציה)</Link>
-              <Link to="/english">English</Link>
+              <Link onClick={()=>setNavOpen(false)} to="/construction">מערכות עגינה (קונסטרוקציה)</Link>
+              <Link onClick={()=>setNavOpen(false)} to="/english">English</Link>
             </div>
           </MobileNavList>
         </div>
       )}
       <Template>
         <div>
-          <CrossfadeImage src={image} />
+          <CrossfadeImage 
+          delay={1}
+          src={image} />
           <h1>סולאר סנסאי - ציוד למערכות סולאריות</h1>
         </div>
 

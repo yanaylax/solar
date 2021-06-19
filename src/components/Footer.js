@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { ReactComponent as Email } from "../images/mail.svg";
 import { ReactComponent as Phone } from "../images/phone.svg";
 import eran from "../images/eran.jpg";
+import { send } from "emailjs-com";
 
 const FooterStyled = styled.div`
   display: flex;
@@ -25,8 +26,8 @@ const FooterStyled = styled.div`
 
   h2 {
     color: #00558a;
-    text-align:center;
-    font-size:1.7em;
+    text-align: center;
+    font-size: 1.7em;
   }
 
   form {
@@ -51,7 +52,6 @@ const FooterStyled = styled.div`
       }
     }
   }
- 
 
   .inputs {
     display: flex;
@@ -117,65 +117,114 @@ const FooterStyled = styled.div`
   .eran_kopel {
     display: flex;
     flex-direction: row;
-    padding-top:1em;
-    margin-top:1em;
-    border-top:0.3em solid #00558a;
+    padding-top: 1em;
+    margin-top: 1em;
+    border-top: 0.3em solid #00558a;
     color: #00558a;
     img {
-      width: 15em;
-      height: 15em;
-      border: 0.2em solid #00558a;
-      border-radius:10px;
+      width: 17em;
+      height: 17em;
     }
-    h3{
-      font-size:1.4em;
+    h3 {
+      font-size: 1.4em;
     }
-    .inner_content{
-      padding:1em;
-      padding-left:2em;
-      padding-right:2em;
-      display:flex;
-      justify-content:space-between;
+    .inner_content {
+      padding: 1em;
+      padding-left: 2em;
+      padding-right: 2em;
+      display: flex;
+      justify-content: space-between;
     }
   }
 `;
 
 export default function Footer() {
   const [status, setStatus] = useState("שלח");
-  const handleSubmit = async (e) => {
-    debugger;
+  const [toSend, setToSend] = useState({
+    from_name: "",
+    reply_to: "",
+    message: "",
+  });
+
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+  //   setStatus("שולח...");
+  //   const { name, email, message } = e.target.elements;
+  //   let details = {
+  //     name: name.value,
+  //     email: email.value,
+  //     message: message.value,
+  //   };
+  //   let response = await fetch("http://localhost:3001/contact", {
+  //     method: "POST",
+  //     headers: {
+  //       "Content-Type": "application/json;charset=utf-8",
+  //     },
+  //     body: JSON.stringify(details),
+  //   });
+  //   setStatus("Submit");
+  //   let result = await response.json();
+  //   alert(result.status);
+  // };
+  const onSubmit = (e) => {
     e.preventDefault();
     setStatus("שולח...");
-    const { name, email, message } = e.target.elements;
-    let details = {
-      name: name.value,
-      email: email.value,
-      message: message.value,
-    };
-    let response = await fetch("http://localhost:3001/contact", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json;charset=utf-8",
-      },
-      body: JSON.stringify(details),
-    });
-    setStatus("Submit");
-    let result = await response.json();
-    alert(result.status);
+
+
+
+    send(
+      "service_w4jqm7m",
+      "template_kkwnpu9",
+      toSend,
+      "user_lB3cqitDCn8NYNkxIWtPT"
+    )
+      .then((response) => {
+        setStatus("ההודעה נשלחה בהצלחה");
+
+      })
+      .catch((err) => {
+        setStatus("בעיה בשליחת הודעה, נא נסה מאוחר יותר");
+
+      });
+  };
+
+  const handleChange = (e) => {
+    setToSend({ ...toSend, [e.target.name]: e.target.value });
   };
   return (
     <div>
       <FooterStyled>
         <h2>צור קשר</h2>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={onSubmit}>
           <div className="fields">
             <div className="inputs">
-              <input required placeholder="*שם מלא" type="text" id="name" />
-              <input required placeholder="*אימייל" type="email" id="email" />
+              <input
+                required
+                type="text"
+                placeholder="*שם מלא"
+                name="from_name"
+                value={toSend.from_name}
+                onChange={handleChange}
+              />
+              <input
+                required
+                placeholder="*אימייל"
+                type="email"
+                name="reply_to"
+                value={toSend.reply_to}
+                onChange={handleChange}
+              />
               <button type="submit">{status}</button>
             </div>
             <div className="message">
-              <textarea id="message" required placeholder="*הודעה" />
+              <textarea
+                value={toSend.message}
+                onChange={handleChange}
+                type="text"
+                name="message"
+                required
+                placeholder="*הודעה"
+              />
             </div>
           </div>
           {/* <div className="contact_info">
@@ -190,27 +239,26 @@ export default function Footer() {
           </div> */}
         </form>
         <div className="eran_kopel">
-        <img src={eran} />
+          <img src={eran} />
 
           <div className="inner_content">
             <h3>סולאר סנסאי (*) מנוהלת על ידי ערן קופל</h3>
             <div className="contact_info">
-            <div>
-              <a href="mailto:erankopel@gmail.com">erankopel@gmail.com</a>
-              <Email width="1em" height="1em" fill="#00558a" />
+              <div>
+                <a href="mailto:erankopel@gmail.com">erankopel@gmail.com</a>
+                <Email width="1em" height="1em" fill="#00558a" />
+              </div>
+              <div>
+                <a href="tel:0523367997">052-3367997</a>
+                <Phone width="1em" height="1em" fill="#00558a" />
+              </div>
             </div>
-            <div>
-              <a href="tel:0523367997">052-3367997</a>
-              <Phone width="1em" height="1em" fill="#00558a" />
-            </div>
-          </div>
             <p>
               (*) סנסאי משמעו מורה, מדריך ביפנית. סן (sen 先) = לפני, הקודם,
               בראש. סאי (sei 生) = לידה, חיים, מקור. סנסאי הוא "זה שנולד קודם"
               כאשר המילה "נולד" אינה מתייחסת לגיל כרונולוגי אלא לוותק
             </p>
           </div>
-          
         </div>
       </FooterStyled>
     </div>
