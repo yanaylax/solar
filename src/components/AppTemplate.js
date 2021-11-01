@@ -8,6 +8,7 @@ import Footer from "./Footer";
 import sunpower from "../images/Sunpower_logo.svg";
 import solaredge from "../images/SolarEdge_logo.svg";
 import solarsensei from "../images/logo-inverted1.png";
+import electra from "../images/electra.jpg";
 
 import "../App.css";
 import { ReactComponent as Menu } from "../images/menu.svg";
@@ -38,13 +39,15 @@ const Template = styled.div`
   img {
     width: 100%;
     height: 35em;
+    object-fit: cover;
+    object-position: center;
     margin: 0;
   }
   h1 {
     color: #00558a;
     margin: 0;
     padding: 1em;
-    background-color: #FFFFFF;
+    background-color: #ffffff;
     font-size: 1.8em;
     font-weight: normal;
     display: flex;
@@ -96,8 +99,8 @@ const MobileNavList = styled.div`
     display: flex;
     flex-direction: column;
     background-color: white;
-    max-height:500px;
-    transition: max-height 0.5s ;
+    max-height: 500px;
+    transition: max-height 0.5s;
     a {
       display: flex;
       direction: rtl;
@@ -118,11 +121,11 @@ const MobileNavList = styled.div`
   .data_hidden {
     max-height: 0px;
     visibility: hidden;
-    a{
-      max-height:0px;
+    a {
+      max-height: 0px;
     }
-    img{
-      max-height:0px;
+    img {
+      max-height: 0px;
     }
   }
 `;
@@ -160,37 +163,35 @@ export default function AppTemplate({ children }) {
             <div className="logo">
               <Link to="/">
                 <div className="logo">
-                <img className="logo_img" src={solarsensei}/>
-
-                  <div>
-                    {" "}
-                    <img src={sunpower} alt="sunpower logo" />
-                    official distributer
-                  </div>
+                  <img className="logo_img" src={electra} />
                 </div>
               </Link>
             </div>
           </MobileNav>
           <MobileNavList>
             <div className={navOpen ? "data_visible" : "data_hidden"}>
-              <Link onClick={()=>setNavOpen(false)} to="/">דף הבית</Link>
-              <Link onClick={()=>setNavOpen(false)} to="/sunpower">
+              <Link onClick={() => setNavOpen(false)} to="/">
+                דף הבית
+              </Link>
+              <Link onClick={() => setNavOpen(false)} to="/sunpower">
                 <img src={sunpower} alt="sunpower logo" />
               </Link>
-              <Link onClick={()=>setNavOpen(false)} to="/solaredge">
+              <Link onClick={() => setNavOpen(false)} to="/solaredge">
                 <img src={solaredge} alt="solaredge logo" />
               </Link>
-              <Link onClick={()=>setNavOpen(false)} to="/construction">מערכות עגינה (קונסטרוקציה)</Link>
-              <Link onClick={()=>setNavOpen(false)} to="/english">English</Link>
+              <Link onClick={() => setNavOpen(false)} to="/construction">
+                מערכות עגינה (קונסטרוקציה)
+              </Link>
+              <Link onClick={() => setNavOpen(false)} to="/english">
+                English
+              </Link>
             </div>
           </MobileNavList>
         </div>
       )}
       <Template>
         <div>
-          <CrossfadeImage 
-          delay={1}
-          src={image} />
+          <CrossfadeImage delay={1} src={image} />
           <h1>סולאר סנסאי - ציוד למערכות סולאריות</h1>
         </div>
 

@@ -4,7 +4,7 @@ import styled from "styled-components";
 import sunpower from "../images/Sunpower_logo.svg";
 import solaredge from "../images/SolarEdge_logo.svg";
 import solarsensei from "../images/logo-inverted1.png";
-
+import electra from "../images/electra.jpg";
 
 const Nav = styled.div`
   direction: rtl;
@@ -39,7 +39,6 @@ const Nav = styled.div`
     display: flex;
     img {
       width: 6em;
-      
     }
     &:hover {
       color: #96b9ce;
@@ -47,6 +46,8 @@ const Nav = styled.div`
   }
   .title {
     padding: 1em;
+    padding-left: 0;
+    padding-bottom: 0.5em;
     display: flex;
     direction: ltr;
     img {
@@ -86,12 +87,7 @@ export default function NavBar() {
       <div className="title">
         <Link to="/">
           <div>
-            <img className="logo" src={solarsensei}/>
-            <div>
-              {" "}
-              <img src={sunpower} alt="sunpower logo" />
-              official distributer
-            </div>
+            <img className="logo" src={electra} />
           </div>
         </Link>
       </div>
