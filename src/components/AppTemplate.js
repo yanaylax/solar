@@ -39,8 +39,7 @@ const Template = styled.div`
   img {
     width: 100%;
     height: 35em;
-    object-fit: cover;
-    object-position: center;
+
     margin: 0;
   }
   h1 {
@@ -56,6 +55,12 @@ const Template = styled.div`
   div {
     display: flex;
     flex-direction: column;
+  }
+  .changing_img {
+    img {
+      object-fit: cover;
+      object-position: center;
+    }
   }
 `;
 
@@ -190,7 +195,7 @@ export default function AppTemplate({ children }) {
         </div>
       )}
       <Template>
-        <div>
+        <div className="changing_img">
           <CrossfadeImage delay={1} src={image} />
           <h1>סולאר סנסאי - ציוד למערכות סולאריות</h1>
         </div>

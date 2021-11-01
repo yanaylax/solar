@@ -10,17 +10,15 @@ export default function useImages() {
     { img: construction, id: 2 },
     { img: construction2, id: 3 },
     { img: array, id: 4 },
-
   ]);
-
+  const changeImage = () => {
+    setCurrentIndex(images.length - 1 <= currentIndex ? 0 : currentIndex + 1);
+  };
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
-    const changeImage = () => {
-      setCurrentIndex(images.length - 1 <= currentIndex ? 0 : currentIndex + 1);
-    };
     setTimeout(changeImage, 10000);
-  }, [currentIndex, images.length]);
+  }, [changeImage]);
 
   return { image: images[currentIndex].img, imgId: images[currentIndex].id };
 }
